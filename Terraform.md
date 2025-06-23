@@ -49,7 +49,7 @@ for example you can use command like `aws iam list-users`
 
 - hint: always to see what commands available use help: `aws help` `aws iam help` and so on. 
 
-### Terraform Installation and Adding VSC Terraform plug-in
+### Terraform Setting Up and Adding VSC Terraform plug-in
 Note: 
 - terraform/ directory is the workspace
 - search `terraform aws provider` to know how to setup terraform with the provider, `aws` can be replaced with any service provider you want.
@@ -70,6 +70,13 @@ Open a terminal and write `aws configure` it will recognize you did that before 
  
 ![image](https://github.com/user-attachments/assets/c1b38e4c-e32e-4ed4-8df7-219b851af695)
 ![image](https://github.com/user-attachments/assets/5eb9c131-5b17-4c0c-aa1b-574002bafd23)
+
+### Build A Virtual Server Using Terraform
+Note: Before resource creation ensure you are using aws IAM account not root account. :)
+- Search `terraform <resourceName> resource` like `terraform ec2 resource` and find out the code.
+- Create a file called `server0.tf` in terraform workspace and add the code in it
+![image](https://github.com/user-attachments/assets/7fc33e01-f7c0-4875-bdb8-b5ab34a4c5cc)
+
 
 
 ### Requirements
