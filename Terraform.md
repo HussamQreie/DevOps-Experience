@@ -91,6 +91,34 @@ To Remove a resource from terraform use `terraform destroy` command
 ![image](https://github.com/user-attachments/assets/9045039d-ad64-4099-b75a-f41b31175b20)
 
 
+### Create AWS VPC using Terraform
+  * Note: there is a default vpc which is the main network in AWS and contains all instances if not specified/customized.
+![image](https://github.com/user-attachments/assets/dd44011b-98f9-452d-86ce-52bca8001b55)
+
+  * Default VPC CIDR
+    
+![image](https://github.com/user-attachments/assets/1bf16ab1-63f0-4be6-a190-3ac32f54110b)
+
+  * Defualt VPC has 3 Subnets
+    
+![image](https://github.com/user-attachments/assets/8b39c9a4-f931-4b9f-bfc8-1dbfa1a9b2ef)
+![image](https://github.com/user-attachments/assets/150bf557-02e3-4fb6-879a-8f4938441a8b)
+![image](https://github.com/user-attachments/assets/9596b693-c606-4cf1-86dc-13e5bdd4c86f)
+
+
+Let's create own VPC:
+- Search as we did above
+- create a file called `vpc.tf` in terraform/ folder.
+- customize code to your needs
+- comment server resource for now! -> select all then ctrl+ /  to comment all content.
+- `terraform plan` and `terraform apply` -> note that all .tf in workspace are used via this command so we commented `server0.tf`, but `provider.tf` always should be exist when create any resource (ec2, vpc, etc...)
+
+
+![image](https://github.com/user-attachments/assets/53d4d59c-5e47-4380-bd8d-8a6c36a43d5f)
+![image](https://github.com/user-attachments/assets/c016fcc7-6920-464f-8265-9e0cf6c39890)
+![image](https://github.com/user-attachments/assets/60cc025f-afea-45a9-b7ad-158d5d960343)
+
+
 ### Requirements
 - Terraform CLI + add env variable to that path
 - Terraform UI 
