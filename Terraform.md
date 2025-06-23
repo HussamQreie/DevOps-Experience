@@ -1,6 +1,40 @@
 # Terraform (IaC)
 ## This repo only to understand, analyze, and apply terraform code to build infrastructures in cloud providers such as AWS
 ---
+### Terraform Installation - Get code from Terraform docs
+* Note: My Host Machine is Linux Mint OS.
+
+```sh
+
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+```
+
+- Verifiying Intallation: ``` terraform --version ```
+
+---
+
+### AWS Setup
+- Go to: ```portal.aws.amazon.com``` and signup/login an root account
+
+![001](https://github.com/user-attachments/assets/5f45c3c6-2e5f-4950-9f72-d5b542ad0054)
+
+- Add MFA
+![image](https://github.com/user-attachments/assets/74f81dd2-703f-4f14-9c55-24c9f1c426f9)
+![image](https://github.com/user-attachments/assets/4739a5bf-eecb-4ce6-9c31-2afb8e3c2b54)
+
+                                                                                                       
+- Create AWS Budget
+![image](https://github.com/user-attachments/assets/f573f9c5-1654-40e6-81ff-b82217502815)
+![image](https://github.com/user-attachments/assets/3d5222f5-25ee-4179-9a16-08c022cac0b2)
+
+- Create IAM user - Admins Group with AdministratorAccess permission & Admin user
+![image](https://github.com/user-attachments/assets/aa18f635-a679-4bdc-bc9c-9935b6453e0f)
+![image](https://github.com/user-attachments/assets/85e5e787-57b2-440e-bef8-d9ccdc4aa6e1)
+![image](https://github.com/user-attachments/assets/995bcb99-a2b0-40c7-8850-9a00453aa00a)
+
+
 ### Requirements
 - Terraform CLI + add env variable to that path
 - Terraform UI 
