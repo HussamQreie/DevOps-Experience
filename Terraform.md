@@ -35,7 +35,19 @@ sudo apt update && sudo apt install terraform
 ![image](https://github.com/user-attachments/assets/85e5e787-57b2-440e-bef8-d9ccdc4aa6e1)
 ![image](https://github.com/user-attachments/assets/995bcb99-a2b0-40c7-8850-9a00453aa00a)
 
-- 
+- AWS CLI Installation and API Access Keys Configuration
+- Note: Programmatically access (CLI) requires to create access keys (accessKeys(like->un)&SecretKey(like->passwd)
+![image](https://github.com/user-attachments/assets/e58bea51-c4fe-4571-8ca3-e7a637736220)
+![image](https://github.com/user-attachments/assets/acc9ee58-c2db-4894-8bec-d126daaa6875)
+- Write `aws configure` command then add below:
+- Access key
+- Secret Key
+- Region -> I used `eu-central-1` where is the closest to me.
+
+Now! you can access aws account via CLI, write `aws help` will list you the services you can manage.
+for example you can use command like `aws iam list-users`
+
+- hint: always to see what commands available use help: `aws help` `aws iam help` and so on. 
 
 ### Requirements
 - Terraform CLI + add env variable to that path
