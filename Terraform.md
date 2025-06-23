@@ -42,12 +42,35 @@ sudo apt update && sudo apt install terraform
 - Write `aws configure` command then add below:
 - Access key
 - Secret Key
-- Region -> I used `eu-central-1` where is the closest to me.
+- Region -> I used `eu-central-1` where is the closest region to me.
 
 Now! you can access aws account via CLI, write `aws help` will list you the services you can manage.
 for example you can use command like `aws iam list-users`
 
 - hint: always to see what commands available use help: `aws help` `aws iam help` and so on. 
+
+### Terraform Installation and Adding VSC Terraform plug-in
+Note: 
+- terraform/ directory is the workspace
+- search `terraform aws provider` to know how to setup terraform with the provider, `aws` can be replaced with any service provider you want.
+- Don't take resources code [we are in setup phase].
+
+Now, in workspace create a file called `provider.tf` and paste the code. [In this file you can use single/multiple providers but In this case we only deal with AWS] 
+ 
+
+  ![image](https://github.com/user-attachments/assets/5f667826-7bfd-4b24-8b98-fc14dee4ff7c)
+  ![image](https://github.com/user-attachments/assets/c6f98872-df2f-4da0-a3ec-fcded0f268ef)
+
+Open a terminal and write `aws configure` it will recognize you did that before just accept enter enter enter.
+* Note: everything in code will overwrite on terminal options like region so be aware of that.
+![image](https://github.com/user-attachments/assets/316d94ee-a171-4b7f-926e-98276355f4d1)
+- Terraform init
+* Note:
+- This installs all binaries needed to deal with aws within specific/scope version of terraform like `>5`
+ 
+![image](https://github.com/user-attachments/assets/c1b38e4c-e32e-4ed4-8df7-219b851af695)
+![image](https://github.com/user-attachments/assets/5eb9c131-5b17-4c0c-aa1b-574002bafd23)
+
 
 ### Requirements
 - Terraform CLI + add env variable to that path
