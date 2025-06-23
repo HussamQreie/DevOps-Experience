@@ -72,11 +72,23 @@ Open a terminal and write `aws configure` it will recognize you did that before 
 ![image](https://github.com/user-attachments/assets/5eb9c131-5b17-4c0c-aa1b-574002bafd23)
 
 ### Build A Virtual Server Using Terraform
-Note: Before resource creation ensure you are using aws IAM account not root account. :)
+Note: Before resource creation ensure you are using AWS IAM account not root account to notice changes in aws managememt console.
 - Search `terraform <resourceName> resource` like `terraform ec2 resource` and find out the code.
 - Create a file called `server0.tf` in terraform workspace and add the code in it
 ![image](https://github.com/user-attachments/assets/7fc33e01-f7c0-4875-bdb8-b5ab34a4c5cc)
+![image](https://github.com/user-attachments/assets/74f93558-ec97-4274-9158-9af648258efa)
 
+Now! write `terraform plan` to build a plan about changes you want to make in aws provider work environment.
+then write `terraform apply` to  execute your code as actions in AWS - IaC
+![image](https://github.com/user-attachments/assets/b6ae441a-8e38-42a3-96ac-e4e9a200a690)
+![image](https://github.com/user-attachments/assets/958cb46b-6843-42d6-994b-123944a58948)
+![image](https://github.com/user-attachments/assets/d7bfad73-1e1b-48c9-9778-4818d8bfdf98)
+
+Notice that if you do `terraform apply` again, terraform checks and compares your code with cloud resource to see if there are changes to apply.
+![image](https://github.com/user-attachments/assets/085381b9-858f-45b7-b46a-c399f46c0528)
+
+To Remove a resource from terraform use `terraform destroy` command
+![image](https://github.com/user-attachments/assets/9045039d-ad64-4099-b75a-f41b31175b20)
 
 
 ### Requirements
