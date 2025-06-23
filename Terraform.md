@@ -30,10 +30,12 @@ sudo apt update && sudo apt install terraform
 ![image](https://github.com/user-attachments/assets/3d5222f5-25ee-4179-9a16-08c022cac0b2)
 
 - Create IAM user - Admins Group with AdministratorAccess permission & Admin user
+- Note:  AdministratorAccess permission -> administrative privilages in both GUI/CLI with limited visibility to finanitial info like (budgets, etc) [what I need]
 ![image](https://github.com/user-attachments/assets/aa18f635-a679-4bdc-bc9c-9935b6453e0f)
 ![image](https://github.com/user-attachments/assets/85e5e787-57b2-440e-bef8-d9ccdc4aa6e1)
 ![image](https://github.com/user-attachments/assets/995bcb99-a2b0-40c7-8850-9a00453aa00a)
 
+- 
 
 ### Requirements
 - Terraform CLI + add env variable to that path
