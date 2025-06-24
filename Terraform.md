@@ -133,6 +133,23 @@ Note: In this case below you can add up to 3 subnets in the main network (3 of /
 ![image](https://github.com/user-attachments/assets/4c9156f4-38e2-494e-9e34-ae70dae50b12)
 
               
+### Handle them all
+Create virtual server, vpc, subnet, and network interface(which assigns private ip to virtual server)
+files:
+- `vpc0.tf` -> main network
+- `subnet0.tf` -> subnets
+- `server0.tf` -> virtual server + network interface
+- `provider.tf` -> tf version for aws
+
+![image](https://github.com/user-attachments/assets/0ba9c25e-8527-4eb5-98a9-caf5aec62566)
+![image](https://github.com/user-attachments/assets/2d7d6846-7883-48ac-9cda-98a0e531a261)
+![image](https://github.com/user-attachments/assets/37571a35-c178-4693-b1ce-60ff1cf5ba65)
+![image](https://github.com/user-attachments/assets/7ff5eb9e-e817-4159-8382-9ada2805271f)
+
+#### `terraform plan` and `terraform apply`
+![image](https://github.com/user-attachments/assets/5ac12c0b-524f-4f42-b5c4-6aadf5f88161)
+![image](https://github.com/user-attachments/assets/756bfccd-1f3b-45b5-9779-43aa7eecb62a)
+
 
 
 
