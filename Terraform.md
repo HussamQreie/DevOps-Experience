@@ -160,6 +160,15 @@ files:
  - `terraform state show <resource>` -> show details about a resource
 ![image](https://github.com/user-attachments/assets/7ccbe974-507e-4e4c-8a52-dd325c476735)
 
+important note: In work environment, a team works in same infrastrature may leads to conflicts so the solution is this file! how? it is locked/reserved to one person until he finishs his changes
+then another one can update the infrastructure by reserve. [`terraform.tfstate` locked(reserved)/unlocked in cloud using s3 service]
+so I will:
+- Create S3 bucket
+- Add terraform backend code in `provider.tf` file to store `terraform.tfstate` in the s3 bucket and allow lock mechanism
+![image](https://github.com/user-attachments/assets/0b07531e-da12-4b2f-b2d5-1682fe0bcbdf)
+![image](https://github.com/user-attachments/assets/d746ad32-5c63-4410-b5a6-82e628612a76)
+![image](https://github.com/user-attachments/assets/5233dd39-8daf-4f1f-b380-1dcd67598ffb)
+
 
 ### Requirements
 - Terraform CLI + add env variable to that path
