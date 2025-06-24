@@ -125,7 +125,7 @@ Let's create subnets of own VPC:
 - write `terraform graph` to view dependencies -> connect resources vpc with subnet in this case
 
 ![image](https://github.com/user-attachments/assets/f2296f43-56a3-4630-8a6c-662669a36671)
-![image](https://github.com/user-attachments/assets/2f1c0585-4d83-4ab4-a8bf-197beb0e073e)
+![image](https://github.com/user-attachments/assets/da2660fc-b451-487a-b0ea-e2da2eb7b418)
 
 
 ### Requirements
