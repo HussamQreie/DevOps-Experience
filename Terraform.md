@@ -185,6 +185,17 @@ Imagine you deal with 1000 instances! should you name or assign values one by on
 ![image](https://github.com/user-attachments/assets/5a36f90d-2859-4588-b6a5-837c9d57819b)
 ![image](https://github.com/user-attachments/assets/a8b9a763-facb-48af-9aa7-2972ae21e2eb)
 
+##### `terraform.tfvars` file
+later discussed but... it for store sensetive variables like passwords, and this file overwrites variables in the workplace if a variable repeated.
+
+
+#### meta-argument - hundreds of instances
+- search terraform meta-argument count.
+![image](https://github.com/user-attachments/assets/f0e78944-c11b-4667-9ebf-165fa0bb3c71)
+![image](https://github.com/user-attachments/assets/5f5af967-5e10-4685-a0f6-96c94f31938d)
+
+* Note: you have 16 limited vCPUs = 16 instances in free plan if you confirms you will face errors.
+
 ### Requirements
 - Terraform CLI + add env variable to that path
 - Terraform UI 
