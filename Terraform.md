@@ -118,6 +118,15 @@ Let's create own VPC:
 ![image](https://github.com/user-attachments/assets/c016fcc7-6920-464f-8265-9e0cf6c39890)
 ![image](https://github.com/user-attachments/assets/60cc025f-afea-45a9-b7ad-158d5d960343)
 
+Let's create subnets of own VPC:
+- Search as we did above
+- Add code to `vpc.tf` file.
+- customize code to your needs
+- write `terraform graph` to view dependencies -> connect resources vpc with subnet in this case
+
+![image](https://github.com/user-attachments/assets/f2296f43-56a3-4630-8a6c-662669a36671)
+![image](https://github.com/user-attachments/assets/2f1c0585-4d83-4ab4-a8bf-197beb0e073e)
+
 
 ### Requirements
 - Terraform CLI + add env variable to that path
