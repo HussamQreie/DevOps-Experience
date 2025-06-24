@@ -165,11 +165,17 @@ then another one can update the infrastructure by reserve. [`terraform.tfstate` 
 so I will:
 - Create S3 bucket
 - Add terraform backend code in `provider.tf` file to store `terraform.tfstate` in the s3 bucket and allow lock mechanism
-![image](https://github.com/user-attachments/assets/0b07531e-da12-4b2f-b2d5-1682fe0bcbdf)
+![image](https://github.com/user-attachments/assets/7a997d30-4220-4df2-9ead-bfe44de98670)
 ![image](https://github.com/user-attachments/assets/d746ad32-5c63-4410-b5a6-82e628612a76)
 ![image](https://github.com/user-attachments/assets/5233dd39-8daf-4f1f-b380-1dcd67598ffb)
+![image](https://github.com/user-attachments/assets/fcdfaa4d-b7d4-4e4d-8a4e-38e1f4ef90fe)
 
+Note: if you update `provider.tf` execute `terraform init` command to update backend infrastructure.
+![image](https://github.com/user-attachments/assets/e83ef4db-7c34-470b-88d6-cfeb3b524a32)
+![image](https://github.com/user-attachments/assets/0da2f271-f639-4ff6-b926-6425e3ffb0c8)
+![image](https://github.com/user-attachments/assets/3b501335-6b42-4af4-b520-0ffab700f240)
 
+Now! no one can make changes on this file if it is locked/reserved by another one.
 ### Requirements
 - Terraform CLI + add env variable to that path
 - Terraform UI 
