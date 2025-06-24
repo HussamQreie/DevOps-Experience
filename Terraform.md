@@ -123,9 +123,14 @@ Let's create subnets of own VPC:
 - Add code to `vpc.tf` file.
 - customize code to your needs
 - write `terraform graph` to view dependencies -> connect resources vpc with subnet in this case
+- `terraform plan` and `terraform apply`
+Note: In this case below you can add 4 subnets in the main network (4 of /26 in main /24)
 
 ![image](https://github.com/user-attachments/assets/f2296f43-56a3-4630-8a6c-662669a36671)
 ![image](https://github.com/user-attachments/assets/da2660fc-b451-487a-b0ea-e2da2eb7b418)
+![image](https://github.com/user-attachments/assets/3e909596-342d-4702-84a3-99fb718689fe)
+
+
 
 
 ### Requirements
