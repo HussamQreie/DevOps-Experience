@@ -150,7 +150,15 @@ files:
 ![image](https://github.com/user-attachments/assets/5ac12c0b-524f-4f42-b5c4-6aadf5f88161)
 ![image](https://github.com/user-attachments/assets/756bfccd-1f3b-45b5-9779-43aa7eecb62a)
 
+`terraform destroy` 
 
+### `terraform.tfstate` file
+ every resource created in the cloud its info stored locally in `terraform.tfstate` file (unfriendly-file when create a resource)
+ what can you do?
+ - `terraform state --help`
+ - `terraform state list` -> show your infrastructure resources
+ - `terraform state show <resource>` -> show details about a resource
+![image](https://github.com/user-attachments/assets/7ccbe974-507e-4e4c-8a52-dd325c476735)
 
 
 ### Requirements
