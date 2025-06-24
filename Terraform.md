@@ -84,7 +84,7 @@ then write `terraform apply` to  execute your code as actions in AWS - IaC
 ![image](https://github.com/user-attachments/assets/958cb46b-6843-42d6-994b-123944a58948)
 ![image](https://github.com/user-attachments/assets/d7bfad73-1e1b-48c9-9778-4818d8bfdf98)
 
-Notice that if you do `terraform apply` again, terraform checks and compares your code with cloud resource to see if there are changes to apply.
+Notice that if you do `terraform apply` again, terraform checks and compares your code with `terraform.tfstate` file - explained below - which contains all info related to resources created in the cloud to see if there are changes to apply.
 ![image](https://github.com/user-attachments/assets/085381b9-858f-45b7-b46a-c399f46c0528)
 
 To Remove a resource from terraform use `terraform destroy` command
