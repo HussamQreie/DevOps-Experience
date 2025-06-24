@@ -182,6 +182,7 @@ Now! no one can make changes on this file if it is locked/reserved by another on
 #### Variables 
 Imagine you deal with 1000 instances! should you name or assign values one by one? no. so use variables as templates in your code would save your time.
 ![image](https://github.com/user-attachments/assets/597a2def-4c3b-412e-9758-074aad03bd7d)
+![image](https://github.com/user-attachments/assets/5a36f90d-2859-4588-b6a5-837c9d57819b)
 ![image](https://github.com/user-attachments/assets/a8b9a763-facb-48af-9aa7-2972ae21e2eb)
 
 ### Requirements
