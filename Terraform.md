@@ -1,5 +1,5 @@
 # Terraform (IaC)
-## This repo only to understand, analyze, and apply terraform code to build infrastructures in cloud providers such as AWS
+## This repository contains Terraform examples and configurations for building infrastructure on AWS.
 ---
 ### Terraform Installation - Get code from Terraform docs
 * Note: My Host Machine is Linux Mint OS.
@@ -11,7 +11,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashi
 sudo apt update && sudo apt install terraform
 ```
 
-- Verifiying Intallation: ``` terraform --version ```
+- Verify Intallation: ``` terraform --version ```
 
 ---
 
@@ -20,34 +20,37 @@ sudo apt update && sudo apt install terraform
 
 ![001](https://github.com/user-attachments/assets/5f45c3c6-2e5f-4950-9f72-d5b542ad0054)
 
-- Add MFA
+#### Add MFA
 ![image](https://github.com/user-attachments/assets/74f81dd2-703f-4f14-9c55-24c9f1c426f9)
 ![image](https://github.com/user-attachments/assets/4739a5bf-eecb-4ce6-9c31-2afb8e3c2b54)
 
                                                                                                        
-- Create AWS Budget
+#### Create AWS Budget
 ![image](https://github.com/user-attachments/assets/f573f9c5-1654-40e6-81ff-b82217502815)
 ![image](https://github.com/user-attachments/assets/3d5222f5-25ee-4179-9a16-08c022cac0b2)
 
-- Create IAM user - Admins Group with AdministratorAccess permission & Admin user
-- Note:  AdministratorAccess permission -> administrative privilages in both GUI/CLI with limited visibility to finanitial info like (budgets, etc) [what I need]
+#### Create IAM User
+
+- Create Admins Group with AdministratorAccess permission
+- Create Admin user
+- Note:  AdministratorAccess permission gives administrative privilages to admins in both GUI/CLI with limited visibility to finanitial info like (budgets, etc) [what I need]
 ![image](https://github.com/user-attachments/assets/aa18f635-a679-4bdc-bc9c-9935b6453e0f)
 ![image](https://github.com/user-attachments/assets/85e5e787-57b2-440e-bef8-d9ccdc4aa6e1)
 ![image](https://github.com/user-attachments/assets/995bcb99-a2b0-40c7-8850-9a00453aa00a)
 
-- AWS CLI Installation and API Access Keys Configuration
-- Note: Programmatically access (CLI) requires to create access keys (accessKeys(like->un)&SecretKey(like->passwd)
+#### AWS CLI Installation and API Access Keys Configuration
+- Note: Access via CLI requires Access Key & Secret Key
 ![image](https://github.com/user-attachments/assets/e58bea51-c4fe-4571-8ca3-e7a637736220)
 ![image](https://github.com/user-attachments/assets/acc9ee58-c2db-4894-8bec-d126daaa6875)
 - Write `aws configure` command then add below:
 - Access key
 - Secret Key
-- Region -> I used `eu-central-1` where is the closest region to me.
+- Region -> I used `eu-central-1`. [choose the closest region to you.]
 
-Now! you can access aws account via CLI, write `aws help` will list you the services you can manage.
+Now! you can access AWS account via CLI, write `aws help` will list you the services you can manage as admin user.
 for example you can use command like `aws iam list-users`
 
-- hint: always to see what commands available use help: `aws help` `aws iam help` and so on. 
+- Hint: always to see what commands available use help: `aws help` `aws iam help` and so on. 
 
 ### Terraform Setting Up and Adding VSC Terraform plug-in
 Note: 
