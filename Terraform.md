@@ -201,3 +201,22 @@ later discussed but... it for store sensetive variables like passwords, and this
 
 ---
 Thank you for reading!
+
+
+```sh
+
+# Install containerd (well-supported on Ubuntu 24.04)
+sudo apt-get update
+sudo apt-get install -y containerd
+
+# Start and enable
+sudo systemctl start containerd
+sudo systemctl enable containerd
+
+# Verify
+containerd --version
+
+
+
+
+```
