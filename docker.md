@@ -6,11 +6,6 @@ docker info
 sudo docker info
 sudo getent group (put your user to docker group to 
 sudo usermod -aG docker <username>
-
-sudo systemctl enable docker
-sudo systemctl start docker
-
-
 docker image pull fedora:latest
 docker image ls
 docker image ls -a
