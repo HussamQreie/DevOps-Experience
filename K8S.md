@@ -56,3 +56,12 @@ sudo kubeadm join 10.0.0.10:6443 --token b0qfkj.q5um3b77qlebsvju \
 ```sh
 kubectl get pods -n kube-system -l tier=control-plane
 ```
+
+### info about node like CRI
+```sh
+kubectl get nodes -o wide 
+```
+### infor about pod like IPs
+```sh
+kubectl get pods -o wide
+```
