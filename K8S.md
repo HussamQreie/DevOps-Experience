@@ -71,6 +71,10 @@ kubectl get pods -o wide
 kubectl get events --watch
 ```
 
+#### Monitor Pods Status in real time
+```sh
+kubectl get pods -w                      
+```
 #### App Logs
 ```sh
 kubectl logs <podname>
