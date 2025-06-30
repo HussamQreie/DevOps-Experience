@@ -54,7 +54,7 @@ sudo kubeadm join 10.0.0.10:6443 --token b0qfkj.q5um3b77qlebsvju \
 
 #### Master Node Components
 ```sh
-kubectl get pods -n kube-system -l tier=control-plane
+vagrant@vagrant:~$ kubectl get pods -n kube-system -l tier=control-plane -o wide
 ```
 
 ### info about node like CRI
@@ -76,3 +76,5 @@ kubectl get events --watch
 kubectl logs <podname>
 kubectl logs startup
 ```
+
+
