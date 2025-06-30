@@ -65,3 +65,14 @@ kubectl get nodes -o wide
 ```sh
 kubectl get pods -o wide
 ```
+
+#### Real Time Monitoring
+```sh
+kubectl get events --watch
+```
+
+#### App Logs
+```sh
+kubectl logs <podname>
+kubectl logs startup
+```
