@@ -26,7 +26,7 @@ This repository has created to make experience in DevOps.
 │   │               └── 📦 deployment-pod-74b58fbbd5-skh2d/
 │   │                   ├── 📄 Status: Running
 │   │                   ├── 📄 IP: 10.244.0.25
-│   │                   └── 📦 Containers/
+│   │                   └── 📦 Containers/ (Act in port level, all containers shares the same pod Ip address but in different port) like cont1: 10.244.0.25:8080, cont2: 10.244.0.25:3000 and so on
 │   │                       └── 📦 hello-container/
 │   │                           └── 📄 Image: hello:1.0
 │   │
