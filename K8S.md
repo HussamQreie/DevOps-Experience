@@ -105,6 +105,13 @@ kubectl get replicasets -o wide
  kubectl get all -l app=app
 ```
 
+#### Get into container
+```sh
+ kubectl exec -it deployment-pod-74b58fbbd5-skh2d  -- sh
+ kubectl exec -it deployment-pod-74b58fbbd5-skh2d  -- bash (if  possible)
+
+```
+
 #### Get all
 ```sh
  kubectl get deploy,rs,pod -o wide --show-labels
