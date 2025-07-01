@@ -80,6 +80,16 @@ kubectl get pods -w
 kubectl logs <podname>
 kubectl logs startup
 ```
+
+#### For both
+##### Pods
+```sh
+kubectl run hello-pod1 --image docker.io/brainupgrade/hello:1.0
+```
+##### Pods (Deployment Type)
+```sh
+kubectl create deploy hello-deploy-pod1 --image docker.io/brainupgrade/hello:1.0
+```
 #### Get info about deployments
 ```sh
 kubectl get deployments -o wide
