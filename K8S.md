@@ -91,7 +91,7 @@ kubectl run hello-pod1 --image docker.io/brainupgrade/hello:1.0
 kubectl create deploy hello-deploy-pod1 --image docker.io/brainupgrade/hello:1.0
 kubectl scale --replicas 3 deploy hello-deploy-pod1
 kubectl describe deploy hello-deploy-pod1
-kubectl set image deploy hello-deploy-pod1 hello=docker.io/brainupgrade/hello:2.0 # Rollout (update pods) make new replica contains updated pods but old replica stills because if we want Rollback (undo)
+kubectl set image deploy hello-deploy-pod1 hello=docker.io/brainupgrade/hello:2.0 # Rollout (update container image) make new replica contains updated images but old replica stills because if we want Rollback (undo)
 ```
 #### Get info about deployments
 ```sh
