@@ -9,11 +9,9 @@ This repository has created to make experience in DevOps.
 
 ---
 
-#### container -> pod -> replicas -> deployment
+#### Logical Components Relationships (Tree)
 ![image](https://github.com/user-attachments/assets/78954156-3b38-4b14-8e2f-52e312f81c8c)
 
-
-#### Tree
 ```sh
 📦 Kubernetes Cluster
 │
