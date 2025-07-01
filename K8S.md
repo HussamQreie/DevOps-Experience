@@ -156,3 +156,38 @@ cat kind-config.yaml
 # 3. أنشئ الكلستر باستخدام الملف المحلي
 kind create cluster --name mn-cluster --config kind-config.yaml
 ```
+
+
+##### Load Balancer issue
+
+###### Install MetalLB (Metal LoadBalancer -> LoadBalancer Controller
+```sh
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
+```
+
+###### Create a config file named `metallb-config.yaml` and add the MetalLB IP address pool 
+```sh
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: my-ip-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.18.255.1-172.18.255.250  # Change to match your Docker network range
+
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: my-l2-advert
+  namespace: metallb-system
+
+```
+Note: do `docker network inspect kind | grep Subnet` to include ip range of this subnet
+
+###### create the service to trigger LoadBalancer IP assignment
+```sh
+kubectl create svc loadbalancer hello --tcp=80:8080
+kubectl get svc hello -o wide
+```
