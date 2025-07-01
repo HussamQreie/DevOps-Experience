@@ -112,7 +112,10 @@ kubectl get replicasets -o wide
 
 ```
 
-#### Get all
+#### Get all information you need then filter by label (cluster, nodes, deployments, replicas, pods)
+* Note: if you filter by deploy label you will get it and down (replicas, pods)
+* so: filter by label `d -get-> d,r,p`, filter by label `r/p -get-> r,p`
 ```sh
- kubectl get deploy,rs,pod -o wide --show-labels
+kubectl get node,all -o wide --show-labels
+kubectl get all -l app=<LabelValue>
 ```
