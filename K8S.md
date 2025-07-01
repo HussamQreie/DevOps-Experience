@@ -130,3 +130,8 @@ kubectl get all -l app=<LabelValue>
 
 `Pod labels is the key connection between the Service and its Endpoints (Pod
 replicas).`
+
+#### Get info about services
+```sh
+ kubectl get services --all-namespaces
+```
