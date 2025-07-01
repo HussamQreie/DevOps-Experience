@@ -191,3 +191,9 @@ Note: do `docker network inspect kind | grep Subnet` to include ip range of this
 kubectl create svc loadbalancer hello --tcp=80:8080
 kubectl get svc hello -o wide
 ```
+
+##### service accessability (what i applied)
+- ClusterIP: pods within cluster can access this service ClusterIP:32xxx(port)
+- NodePort: pods within cluster can access this service via NodeIP:32xxx(port)
+- LoadBalancer: Accessable via docker network (Out of cluster) ExternalIP:serviceport> like 80:8080 in this case 80.
+- ExternalName: I haven't do it yet.
