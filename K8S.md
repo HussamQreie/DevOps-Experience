@@ -135,3 +135,9 @@ replicas).`
 ```sh
  kubectl get services --all-namespaces
 ```
+
+#### Full DNS URL - Services
+```sh
+<service-name>.<namespace>.svc.cluster.local:<port>
+logger-srv.default.svc.cluster.local:80
+```
