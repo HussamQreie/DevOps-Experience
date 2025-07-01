@@ -95,3 +95,12 @@ kubectl create deploy hello-deploy-pod1 --image docker.io/brainupgrade/hello:1.0
 kubectl get deployments -o wide
 ```
 
+#### Get info about replicasets
+```sh
+kubectl get replicasets -o wide
+```
+
+#### Get info about specific deployment pod by label
+```sh
+ kubectl get all -l app=app
+```
