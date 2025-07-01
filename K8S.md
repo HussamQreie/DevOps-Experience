@@ -89,6 +89,8 @@ kubectl run hello-pod1 --image docker.io/brainupgrade/hello:1.0
 ##### Pods (Deployment Type)
 ```sh
 kubectl create deploy hello-deploy-pod1 --image docker.io/brainupgrade/hello:1.0
+kubectl scale --replicas 3 deploy hello-deploy-pod1
+kubectl describe deploy hello-deploy-pod1
 ```
 #### Get info about deployments
 ```sh
