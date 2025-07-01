@@ -80,5 +80,8 @@ kubectl get pods -w
 kubectl logs <podname>
 kubectl logs startup
 ```
-
+#### Get info about deployments
+```sh
+kubectl get deployments -o wide
+```
 
