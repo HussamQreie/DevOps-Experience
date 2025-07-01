@@ -141,3 +141,4 @@ replicas).`
 <service-name>.<namespace>.svc.cluster.local:<port>
 logger-srv.default.svc.cluster.local:80
 ```
+Hint: tshoot curl would help for testing/troubleshooting
