@@ -142,3 +142,17 @@ replicas).`
 logger-srv.default.svc.cluster.local:80
 ```
 Hint: tshoot curl would help for testing/troubleshooting
+
+
+---
+#### KIND
+```sh
+# 1. نزّل الملف أولاً
+curl -o kind-config.yaml https://raw.githubusercontent.com/HussamQreie/Test-Files/main/yaml-files/KIND-MN-Cluster.yaml
+
+# 2. تحقق من محتواه
+cat kind-config.yaml
+
+# 3. أنشئ الكلستر باستخدام الملف المحلي
+kind create cluster --name mn-cluster --config kind-config.yaml
+```
