@@ -107,5 +107,5 @@ kubectl get replicasets -o wide
 
 #### Get all
 ```sh
-kubectl get deploy,rs,pod
+kubectl get deploy,rs,pod -o wide
 ```
