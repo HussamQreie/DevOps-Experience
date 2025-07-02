@@ -3,6 +3,7 @@ This Main repo for k8s.
 ---
 vagrant up, ->(book) init, (fromHere-CommandFile) install cni on master node then (book) join workers. (goodluck)
 
+
 ---
 ##### Initlize Kubernetes using kubeadm
 
@@ -21,7 +22,26 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 ```
 
+##### CRI
+```sh
+```sh
 
+
+sudo apt-get update
+sudo apt-get install -y containerd
+
+sudo systemctl start containerd
+sudo systemctl enable containerd
+
+
+containerd --version
+
+
+
+
+```
+
+```
 
 
 ---
