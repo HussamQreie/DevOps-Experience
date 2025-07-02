@@ -40,16 +40,16 @@ containerd --version
 
 
 ```
-
+#####  Get Token
 ```
 
 
 ---
 
-##### Get Token
 ```sh
 kubeadm token -h
 kubeadm token list
+
 ```
 
 ##### Get the CA cert hash
