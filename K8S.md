@@ -217,3 +217,14 @@ kubectl get svc hello -o wide
 - NodePort: pods within cluster can access this service via NodeIP:32xxx(port)
 - LoadBalancer: Accessable via docker network (Out of cluster) ExternalIP:serviceport> like 80:8080 in this case 80.
 - ExternalName: I haven't done it yet.
+
+---
+
+#### Rollout & Rollback
+
+```sh
+kubectl rollout status deployment/<deploymentName>
+kubectl rollout history deployment/<deploymentName>
+kubectl rollout undo deployment/<deploymentName>
+
+```
