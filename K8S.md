@@ -237,3 +237,7 @@ till getting up again. all deployment pods are affected at a time in Recreate st
 ```sh
 minikube service servicename --url
 ```
+###### port forwarding if needed to test urls in host browser
+```sh
+config.vm.network "forwarded_port", guest: 30010, host: 30010
+```
