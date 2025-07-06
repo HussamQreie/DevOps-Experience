@@ -229,3 +229,11 @@ kubectl rollout undo deployment/<deploymentName>
 ```
 Note: one pod is affected at a time in rollout (rollingupdate) strategy (v2,v3) jumping, but Recreate strategy the application went down (failure) for a specific time to wait app 
 till getting up again. all deployment pods are affected at a time in Recreate strategy 
+
+
+
+
+##### Get url
+```sh
+minikube service servicename --url
+```
