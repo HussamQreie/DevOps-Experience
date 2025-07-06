@@ -241,5 +241,15 @@ minikube service servicename --url
 note url is: http://192.168.49.2:30010
 edit vagrantfile and write this command
 ```sh
-config.vm.network "forwarded_port", guest: 30010, host: 30010 (in host terminal)
+ # Add port forwarding for Minikube service (30010)
+  config.vm.network "forwarded_port", 
+    guest: 30010,  # Port inside the VM (Minikube service)
+    host: 30010,   # Port on your Linux Mint host
+    host_ip: "127.0.0.1"  # Optional: Bind to localhost only
+
+  # (Optional) If you need additional ports (e.g., SSH, HTTP, etc.)
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  end 
+
+vagrant reload
 ```
