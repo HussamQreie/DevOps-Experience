@@ -238,6 +238,8 @@ till getting up again. all deployment pods are affected at a time in Recreate st
 minikube service servicename --url
 ```
 ###### port forwarding if needed to test urls in host browser
+note url is: http://192.168.49.2:30010
+edit vagrantfile and write this command
 ```sh
-config.vm.network "forwarded_port", guest: 30010, host: 30010
+config.vm.network "forwarded_port", guest: 30010, host: 30010 (in host terminal)
 ```
