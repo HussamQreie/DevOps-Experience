@@ -291,3 +291,16 @@ kubectl get pods --all-namespaces
 kubectl set image deployment deploymentname currentimage=updatedimage
 kubectl set image deployment nginx nginx=nginx:1.18
 ```
+
+#### Imperative commands
+Create objects
+```sh
+kubectl create deploy nginx --image nginx
+kubectl expose deploy nginx --port 80
+```
+Update objects
+```sh
+kubectl edit deploy nginx
+kubectl scale deploy nginx --replicas 5
+kubectl set image deployment nginx nginx=nginx:1.18
+```
