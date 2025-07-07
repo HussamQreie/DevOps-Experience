@@ -298,9 +298,16 @@ Create objects
 kubectl create deploy nginx --image nginx
 kubectl expose deploy nginx --port 80
 ```
+
+
+
 Update objects
 ```sh
 kubectl edit deploy nginx
 kubectl scale deploy nginx --replicas 5
 kubectl set image deployment nginx nginx=nginx:1.18
+kubectl replace -f nginx.yaml # replace local yaml file with object file in kubernetes ensure `kubectl create -f file.yaml` to avoid getting error because how would you replace something is not exist :)
+kubectl replace --force -f nginx.yaml # delete and recreate object file (diff a bit of above)
+kubectl create -f nginx.yaml # fail! object file is already exist/created in kubernetes
+
 ```
