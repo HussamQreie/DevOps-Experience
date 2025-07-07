@@ -310,4 +310,9 @@ kubectl replace -f nginx.yaml # replace local yaml file with object file in kube
 kubectl replace --force -f nginx.yaml # delete and recreate object file (diff a bit of above)
 kubectl create -f nginx.yaml # fail! object file is already exist/created in kubernetes
 
+
+Declarative (more smarter)
+kubectl apply -f nginx.yaml # nginx image
+kubectl apply -f nginx.yaml # this as update  will workds -> nginx 1.18 (updated)
+
 ```
