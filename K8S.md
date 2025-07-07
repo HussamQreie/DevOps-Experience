@@ -284,3 +284,10 @@ kubectl get pods -n dev
 ```sh
 kubectl get pods --all-namespaces
 ```
+
+
+##### Update image in deployment
+```sh
+kubectl set image deployment deploymentname currentimage=updatedimage
+kubectl set image deployment nginx nginx=nginx:1.18
+```
