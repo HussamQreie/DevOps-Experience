@@ -74,7 +74,7 @@ sudo kubeadm join 10.0.0.10:6443 --token b0qfkj.q5um3b77qlebsvju \
 
 #### Master Node Components
 ```sh
-vagrant@vagrant:~$ kubectl get pods -n kube-system -l tier=control-plane -o wide
+kubectl get pods -n kube-system -l tier=control-plane -o wide
 ```
 
 ### info about node like CRI
