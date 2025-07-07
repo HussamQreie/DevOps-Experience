@@ -236,23 +236,51 @@ till getting up again. all deployment pods are affected at a time in Recreate st
 
 
 
-##### Get url
+##### Get serviceurl
 ```sh
 minikube service servicename --url
 ```
-###### port forwarding if needed to test urls in host browser
-note url is: http://192.168.49.2:30010
-edit vagrantfile and write this command
+
+#### Namespaces
+Goal: Isolate group of resources(pods, deploys, replicasets) from other resourses logically
+
+###### create a namespace
 ```sh
- # Add port forwarding for Minikube service (30010)
-  config.vm.network "forwarded_port", 
-    guest: 30010,  # Port inside the VM (Minikube service)
-    host: 30010,   # Port on your Linux Mint host
-    host_ip: "127.0.0.1"  # Optional: Bind to localhost only
+kubectl create namespace <name>
+kubectl create namespace dev
+```
 
-  # (Optional) If you need additional ports (e.g., SSH, HTTP, etc.)
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-  end 
+###### create a resource in another namespace use 
+```sh
+kubectl run pod1 --image nginx -n dev
+same commands addtion to namespace option
+```
 
-vagrant reload
+##### access a resource from same namespace
+use: resourcename
+```sh
+resourcename
+mysql.connect("db-service)
+```
+##### access a resource from diff namespace 
+use: full dns url
+
+```sh
+resourcename.namespace.resourcetype.cluster.local
+mysql.connect("db-service.dev.svc.cluster.local")
+```
+
+###### Change your workenvironment without namespace option
+```sh
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+```
+now you moved from default to dev namespace so you can  apply commands without namespace like
+```sh
+kubectl get pods
+not
+kubectl get pods -n dev
+```
+##### show everything in namespaces
+```sh
+kubectl get pods --all-namespaces
 ```
