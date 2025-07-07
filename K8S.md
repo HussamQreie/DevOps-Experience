@@ -72,10 +72,12 @@ sudo kubeadm join 10.0.0.10:6443 --token b0qfkj.q5um3b77qlebsvju \
 	--discovery-token-ca-cert-hash sha256:66bcbd41bc075363f4833a3ab70785a4df814778c0e05d993033596a48f99e9f 
 ```
 
-#### Master Node Components
+#### Master Node Components / Get things from a thing
 ```sh
 kubectl get namespaces
 kubectl get pods -n kube-system -l tier=control-plane -o wide
+kubectl get svc -n <namespaceName>
+kubectl get all -n <namespaceName>
 ```
 
 ### info about node like CRI
