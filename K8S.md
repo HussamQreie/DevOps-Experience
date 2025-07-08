@@ -323,6 +323,12 @@ kubectl run bee --image nginx --dry-run=client -o yaml > bee.yaml
 ```
 then and tolerations section in this case for ex.
 
+* node(taint) - pod(toleration)
+* node(label) - pod(affinity)
+
+* edit deployment -> changes applied automatically if not pods failed . if failed remove failed pods
+
+
 
 
 #### Label a node 
