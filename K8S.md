@@ -326,8 +326,9 @@ then and tolerations section in this case for ex.
 * node(taint) - pod(toleration)
 * node(label) - pod(affinity)
 ##### below need focus :)
-* taint & tolerance may face a problem if pod tolerated and node not tainted -> tolerated pod goes to that node if available -> solution:  tainted node needed.
-* label & node affinity may face a problem if pod not affinited and node is labeled -> not affinited pod goes to that node if not affinited -> solution: affinited pod needed
+* taint & tolerance may face a problem if pod tolerated and node not tainted -> tolerated pod goes to that node if available.
+* label & node affinity may face a problem if pod not affinited and node is labeled -> not affinited pod goes to that node if not affinited.
+So the solution is to combine both (taint & tolerance && label & node affinity). 
 
 
 * edit deployment -> changes applied automatically if not pods failed . if failed remove failed pods
