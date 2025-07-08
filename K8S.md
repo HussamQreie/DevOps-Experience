@@ -355,7 +355,11 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 
 
 ##### behavior
-2 problems of limit: ram exceeding/needing and cpu cycle needing(suffocated/not reserved).
+###### 2 problems of setting limit
+2. Ram exceeding/needing(suffocated)
+1. cpu cycle needing(suffocated/not reserved).
+###### benefit of setting a resource request
+- resource is guaranteed as (minimum/recommended) requirement.
 
 
 - no req + no limit = default
