@@ -361,6 +361,7 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 ###### benefit of setting a resource request
 - resource is guaranteed as (minimum/recommended) requirement.
 
+---
 
 - no req + no limit = default
 - no req + limit -> request=limit -> excceding could happen (no guarantee of pod termination because of constantly ram excceding) 
