@@ -326,8 +326,8 @@ then and tolerations section in this case for ex.
 * node(taint) - pod(toleration)
 * node(label) - pod(affinity)
 ##### below need focus :)
-* taint & tolerance may face a problem if pod tolerated and node not tainted -> tolerated pod goes to that node if available.
-* label & node affinity may face a problem if pod not affinited and node is labeled -> not affinited pod goes to that node if not affinited.
+* taint & tolerance may face a problem if pod tolerated and node not tainted -> tolerated pod goes to that node if available. -> node need taint (if you notice this the go to solution)
+* label & node affinity may face a problem if pod not affinited and node is labeled -> not affinited pod goes to that node if not affinited. -> pod need affinite (if you notice this the go to solution)
 So the solution is to combine both (taint & tolerance && label & node affinity).
 first:  taint & tolerance
 then: label & node affinity
