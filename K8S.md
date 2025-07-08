@@ -322,3 +322,10 @@ kubectl apply -f nginx.yaml # this as update  will workds -> nginx 1.18 (updated
 kubectl run bee --image nginx --dry-run=client -o yaml > bee.yaml
 ```
 then and tolerations section in this case for ex.
+
+
+
+#### Label a node 
+```sh
+kubectl label nodes <node-name> <label-key>=<label-value>
+```
