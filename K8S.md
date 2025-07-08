@@ -347,8 +347,18 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 
 
 #### Schedule resources on container A
-- resource request: minimum requirement to run a containerA
+- resource request: minimum requirement to run a containerA (resource is guaranteed)
 - limit: containerA don't suffocate other containers to make them in pending status.
 - default which is none: containerA may suffocate other containers which is not ideal.
 - ram: may exceeded but not constantly
 - vcpu: no exceeded at all, equals to a thread in aws but azure,gcp equal to a core
+
+
+##### behavior
+2 problems of limit: ram exceeding and cpu cycle needing if it not reserved.
+
+
+- no req + no limit = default
+- no req + limit -> request=limit -> excceding could happen (no guarantee of pod termination because of constantly ram excceding) 
+- req + limit -> we may need more cpu cycles for some reason if these are not reserved + ram exceeding problem
+- req + no limit -> resource is guaranteed + consume as many cpu cycles as available 	even when containerA uses 95% of cpu cycles containerB in the other hand still works in minimum requirments without problems. [ideal solution
