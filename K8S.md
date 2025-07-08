@@ -361,4 +361,4 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 - no req + no limit = default
 - no req + limit -> request=limit -> excceding could happen (no guarantee of pod termination because of constantly ram excceding) 
 - req + limit -> we may need more cpu cycles for some reason if these are not reserved + ram exceeding problem
-- req + no limit -> resource is guaranteed + consume as many cpu cycles as available 	even when containerA uses 95% of cpu cycles containerB in the other hand still works in minimum requirments without problems. [ideal solution
+- req + no limit -> resource is guaranteed + consume as many cpu cycles as available even when containerA uses 95% of cpu cycles containerB in the other hand still works in minimum requirments without problems. [ideal solution but ensure that setting request resource to all node containers]
