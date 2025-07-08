@@ -347,7 +347,8 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 
 
 #### Schedule resources on container A
-resource request: minimum requirement to run a containerA
-limit: containerA don't suffocate other containers to make them in pending status.
-ram: may exceeded but not constantly
-vcpu: no exceeded at all, equals to a thread in aws but azure,gcp equal to a core
+- resource request: minimum requirement to run a containerA
+- limit: containerA don't suffocate other containers to make them in pending status.
+
+- ram: may exceeded but not constantly
+- vcpu: no exceeded at all, equals to a thread in aws but azure,gcp equal to a core
