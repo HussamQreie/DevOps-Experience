@@ -344,3 +344,10 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 ```
 * used by `nodeSelector` in ease use (if this do this) not (do this and do this if this)
 * used by ... has these cababilities 
+
+
+#### Schedule resources on container A
+resource request: minimum requirement to run a containerA
+limit: containerA don't suffocate other containers to make them in pending status.
+ram: may exceeded but not constantly
+vcpu: no exceeded at all, equals to a thread in aws but azure,gcp equal to a core
