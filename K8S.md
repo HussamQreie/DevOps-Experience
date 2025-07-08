@@ -329,3 +329,5 @@ then and tolerations section in this case for ex.
 ```sh
 kubectl label nodes <node-name> <label-key>=<label-value>
 ```
+* used by `nodeSelector` in ease use (if this do this) not (do this and do this if this)
+* used by ... has these features 
