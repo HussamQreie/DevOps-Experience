@@ -388,7 +388,12 @@ kubectl create -f ds.yaml -n kube-system
 ```
 
 #### Static pods
-- know static pods by name and make sure by ownerReference properity 
+- know static pods by name and make sure by ownerReference properity command below
+- look at the yaml format for this
+```sh
+kubectl get pod <podName> -n <nsName> -o yaml
+```
+* if Node -> is Static.
 - know the path of the directory that holding the static pod definitions files by this file
 ```sh
 cat /var/lib/kubelet/config.yaml
