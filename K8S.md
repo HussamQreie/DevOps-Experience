@@ -381,4 +381,8 @@ Note: use this if errors happend if you edit a resource object file
 ```
 
 ### Search for rs for ds in doc
-just edit kind
+just edit kind to DaemonSet and remove replicas if needed
+then deploy it in namespace you want
+```sh
+kubectl create -f ds.yaml -n kube-system 
+```
