@@ -379,3 +379,6 @@ Note: use this if errors happend if you edit a resource object file
 ```sh
 :w newfile.yaml
 ```
+
+### Search for rs for ds in doc
+just edit kind
