@@ -386,3 +386,5 @@ then deploy it in namespace you want
 ```sh
 kubectl create -f ds.yaml -n kube-system 
 ```
+
+#### Static pods
