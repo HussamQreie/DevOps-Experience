@@ -371,3 +371,11 @@ kubectl label nodes <node-name> <label-key>=<label-value>
 ---
 
 - LimitRange and ResourceQuotas are namespace level objects to control resources(cpu,ram). -> general and not pod-specified.
+
+---
+
+### Good for copy description to a new file
+Note: use this if errors happend if you edit a resource object file 
+```sh
+:w newfile.yaml
+```
