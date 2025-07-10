@@ -405,3 +405,4 @@ kubectl run <podName> --image <imgName> --dry-run=client -o yaml --command -- sl
 ```
 - Don't place kubectl options after -- command option
 - Move it to the directory that holding the static pod definitions files.
+- You don't need to run it just place it there kubelet will run it automatically as a static pod
