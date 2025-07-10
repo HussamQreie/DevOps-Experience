@@ -388,3 +388,15 @@ kubectl create -f ds.yaml -n kube-system
 ```
 
 #### Static pods
+- know static pods by name and make sure by ownerReference properity 
+- know the path of the directory that holding the static pod definitions files by this file
+```sh
+cat /var/lib/kubelet/config.yaml
+```
+- looking for `staticPodPath` which points to that directory.
+- create a static pod with command
+```sh
+kubectl run <podName> --image <imgName> --dry-run=client -o yaml --command -- sleep  1000  > fileName.yaml
+```
+- Don't place kubectl options after -- command option
+- Move it to the directory that holding the static pod definitions files.
