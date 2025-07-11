@@ -414,3 +414,10 @@ kubectl run <podName> --image <imgName> --dry-run=client -o yaml --command -- sl
 ```sh
 kubectl get pods -o custom-columns="NAME:.metadata.name,PRIORITY:.spec.priorityClassName"
 ```
+
+### Admission Controller
+- To check default enabled admission controllers you have to get into container and checkout
+-  `--` after this is considered as a shell commands after getting container access
+```sh
+kubectl exec -it <api-server-pod> -n <nsName> -- kube-apiserver -h | grep 'enable-admission-plugins'
+```
