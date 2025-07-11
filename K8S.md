@@ -505,7 +505,15 @@ kubectl create -f <fName> -n <nsName>
 kubectl create -f <fName> -n <nsName>
 ```
 
-- Add webhook-config files and checkout what it does when applied
+- Add webhook-config files and checkout what applies when you do something (like pod creation from you allow conf file acting) like this
 ```sh
 kubectl create -f <fName> -n <nsName>
 ```
+
+-  check out the changes done by mutation webhook in pod
+```sh
+kubectl get pods pod-with-defaults -o yaml
+```
+- if no certin config specified in a pod definition file and mutation webhook has this conf -> the config will be added to that pod -> (default)
+- if certin config specified in a pod definition file (like smth :true) and mutation webhook has converse config (like smth: false) -> no affect from mutation webhook because it has already specified -> (override)
+- if the pod definition file has conflict in code, mutation webhook will reject the request from pod. (file confict)
