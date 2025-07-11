@@ -420,4 +420,71 @@ kubectl get pods -o custom-columns="NAME:.metadata.name,PRIORITY:.spec.priorityC
 -  `--` after this is considered as a shell commands after getting container access
 -  this command shows you enabled and disabled admission plugins by default
 ```sh
- kubectl exec -it -n kube-system kube-apiserver-controlplane -- kube-apiserver -h | grep admission-plugins```
+ kubectl exec -it -n kube-system kube-apiserver-controlplane -- kube-apiserver -h | grep admission-plugins
+```
+
+
+### Web hooking
+- You need a namespace for web server
+```sh
+kubectl create -n <nsName>
+```
+- You need to create a tls secret for secure webhook communication in the namespace this secret requires (private key and certificate).
+
+- certifcation example below (.crt)
+```sh
+-----BEGIN CERTIFICATE-----
+MIIDjjCCAnagAwIBAgIUWDW3Z5yroE2+GJSW5YDm7xnPjoAwDQYJKoZIhvcNAQEL
+BQAwLzEtMCsGA1UEAwwkQWRtaXNzaW9uIENvbnRyb2xsZXIgV2ViaG9vayBEZW1v
+IENBMB4XDTI1MDcxMTE1NTk1NFoXDTI1MDgxMDE1NTk1NFowKjEoMCYGA1UEAwwf
+d2ViaG9vay1zZXJ2ZXIud2ViaG9vay1kZW1vLnN2YzCCASIwDQYJKoZIhvcNAQEB
+BQADggEPADCCAQoCggEBAKHV9RvYg07ZV/2rhjDSjro8SnAK/6VNl1/ZAUadgRp+
+SyR2m7Eb947VTPOBMrfVAePt4PJi2CqxSewVRYjNAC9mOuxueBDFnh3dCO77FvOE
++vqCr1Ia3Z2+Mq7QJapv0y8nn9yE4djTVzwnWBE/C2iEyNn+GEVEamJIJHZHnCFg
+ZKD5cQ1RN+AtIcslxwmtLDwazCKhLn/jXbaS8pus9O3it42InV+jRM2NL8y6imNS
+CY77h3xftIo/TxJp2aFL3+6dugPVzLOWVaYzHJ1DQf91mG0oENDTQI5iLG3AsSkE
+/Dt6/fOg6E/uVv2JVGi8iAJ6BUeSeVuaTdYHwyQgsIUCAwEAAaOBpjCBozAJBgNV
+HRMEAjAAMAsGA1UdDwQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUH
+AwEwKgYDVR0RBCMwIYIfd2ViaG9vay1zZXJ2ZXIud2ViaG9vay1kZW1vLnN2YzAd
+BgNVHQ4EFgQU9qlHuukWIU8UQkzs5hHvBOKDTrwwHwYDVR0jBBgwFoAUf79MQ+zA
+J8M3y9J8CygCpP0+XIUwDQYJKoZIhvcNAQELBQADggEBAIusmnwOuA9Lb80CDxLs
+MK91CNhB5285gjDjKIcR4GhCMyphQr+UFFoD6Ecl4foF2CaxmHjwtb5B1GX0NYQI
+vXG/rbIV6CLgBk4rTb1y+82Tm/3u3Hb3ObXVX5z9OPamhkelCLzNfa6HhXpCs9cw
+r/3rfpiv1uoqw0SpBBwWkNVCWWefKDAoVdeN7IddAgud2jw75EPv/LAwv92IAx0y
+hMI+U49WyBmd0zsQ0ufuurnFdJoaYe1FI7YDsHZ5gF5CVi3QrIVqwfXMlUcjZiDt
+8ZgmbkAzR/EoJwQ1A6lEDVCugrM8RdouXVOzniYYuw7Xv9ndMNZlT4d/HzP1X4+0
+6Qs=
+-----END CERTIFICATE-----
+```
+- private key example below (.key)
+```sh
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCh1fUb2INO2Vf9
+q4Yw0o66PEpwCv+lTZdf2QFGnYEafkskdpuxG/eO1UzzgTK31QHj7eDyYtgqsUns
+FUWIzQAvZjrsbngQxZ4d3Qju+xbzhPr6gq9SGt2dvjKu0CWqb9MvJ5/chOHY01c8
+J1gRPwtohMjZ/hhFRGpiSCR2R5whYGSg+XENUTfgLSHLJccJrSw8GswioS5/4122
+kvKbrPTt4reNiJ1fo0TNjS/MuopjUgmO+4d8X7SKP08SadmhS9/unboD1cyzllWm
+MxydQ0H/dZhtKBDQ00COYixtwLEpBPw7ev3zoOhP7lb9iVRovIgCegVHknlbmk3W
+B8MkILCFAgMBAAECggEAH7KUuNDCPTwgOiDxnlfrWSpMaSAaXOHy63TJRW+9lPcW
+GCz8BydDaHA6S3preOqpXV+e/tKh5NDHOgybizUd22rSUTM85IoUU2SS5p3665UJ
+BG560OHOtOIHMsq1iemvqy1/Z/WF985DKJbLLsuSnDTf0ySr08tX6+qV663QdI/I
+vbIB3Wy+ZT/OsjwKjhepjEPCAuVVjf1S4Zd9Y/OyKciMacYLFYoE+meIEwKNiFKK
+GFig1CKOdV12sRoCD/mO2G7W2oZmatuCmQLYO+WaH0rxbvnVvJu6487DMitP7AMg
+jZqswa4FhkX/5SELSOUHgGh2o1SxNdUVGi3CCMrf8QKBgQC1qEo3rMnkclLh9Agd
+++lCV58E3SV6Oh2mElCCSUiMydlqJgtszCSwB7PpWm8s4qjhnZ7BZ+NTFbFDiJ6M
+nC7rSWgV1xgCa0nAYhyZY/zDrW+lE4CZ89QZRLvNzN5/Xa2pPsVUbyeGVdB8/B1S
+98mVN4N4yHF1z5DIS0iuJxc6lQKBgQDkEQP+K8z/Rw7vrnTNg0nBvNmB56CKdaEV
+bDiG9XqG38fIstn5jimYssCrmBwZJ1USIHwG2Kme5dm+mtY92SkBT0Yy3QbsmFgK
+oM++PJ07fytJC0z58C2TuEiUhvTzFyP1VS87DaALTTSwRCTnWfAagbD4Ti5Uj+U5
+ypGG2FASMQKBgGEofWmBtQnGS6YmSyEeVwfwrVCAp0bURn9IVF8aqv8CBpLLfljW
+Ztjvhb5NbCDpqcHh98MhuWf6tjCUpZg3ALE/NbhYrrK8h1mqH/m6jLprzMbRw3qT
++uD47imIZYhhpjxbIleii9VBmJ0Aiv6RIPP6GQtEycplFd7KxTjAF6BxAoGAEy57
+L31vmGjZkL8Tg9Vu9qRzhsF8dyi9i5e2iWNMEtvvaanhO2QBi549JjF864CrXwLs
+a4b9fSfH0IglTL5e/IU2WkDMvElz3jD4R//BGafwdAxHRR42Nx5gvF09bNSdaZzo
+hAb5Vvn/XHPexraBwzj1MW0h6GrR1LJ82uKGmYECgYEAn/PJWmMw6R6IybXvtx5V
+W2/oFMMCY/P8NyDd8sZenpqvJ0MyftD5ULhRgChZ4qahBw1kddtozWwibBIxFN4j
+5OOUfbM+124oVQVy7oBT/UvbC6Sx/CmxibuAsn2bcJxJwCKzDwQb1Zwaca970A9f
+SzLbD3KJht5vNgG/8hLE8xA=
+-----END PRIVATE KEY-----
+```
+  
