@@ -431,7 +431,7 @@ kubectl create -n <nsName>
 ```
 - You need to create a tls secret for secure webhook communication in the namespace this secret requires (private key and certificate).
 
-- certifcation example below (.crt)
+- public key certifcation example below (.crt)
 ```sh
 -----BEGIN CERTIFICATE-----
 MIIDjjCCAnagAwIBAgIUWDW3Z5yroE2+GJSW5YDm7xnPjoAwDQYJKoZIhvcNAQEL
