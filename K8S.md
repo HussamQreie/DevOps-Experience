@@ -493,3 +493,8 @@ SzLbD3KJht5vNgG/8hLE8xA=
 kubectl create -n <nsName>  secret tls <secret-tls> --cert=path/to/cert --key=path/to/key
 ```
   
+
+--- Create admission-controller-webhook deployment
+```sh
+kubectl create -f <fName> -n <nsName>
+```
