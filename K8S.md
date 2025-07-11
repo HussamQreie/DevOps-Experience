@@ -494,7 +494,13 @@ kubectl create -n <nsName>  secret tls <secret-tls> --cert=path/to/cert --key=pa
 ```
   
 
---- Create admission-controller-webhook deployment
+- Create webhook-server deployment
+```sh
+kubectl create -f <fName> -n <nsName>
+```
+
+- Create webhook-service service
+* by that we say server is ready to communicate securly with admission controller
 ```sh
 kubectl create -f <fName> -n <nsName>
 ```
