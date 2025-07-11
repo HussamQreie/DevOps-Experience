@@ -407,3 +407,10 @@ kubectl run <podName> --image <imgName> --dry-run=client -o yaml --command -- sl
 - Move it to the directory that holding the static pod definitions files.
 - You don't need to run the yaml file using kubectl just place it there kubelet will run it automatically as a static pod -> if you do you will get 2 pods on is static and another is not.
 - mirror object is sent to api server so you can read that static pod but you can't write in it if you want go to static pod definition files dir.
+
+
+### priority classes
+- after setting pods to classes you can compare them based on priority via this command
+```sh
+kubectl get pods -o custom-columns="NAME:.metadata.name,PRIORITY:.spec.priorityClassName"
+```
