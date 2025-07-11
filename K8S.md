@@ -490,6 +490,6 @@ SzLbD3KJht5vNgG/8hLE8xA=
 
 - secret tls creation command
 ```sh
-kubectl -n <nsName> create secret tls <secret-tls> --cert=path/to/cert --key=path/to/key
+kubectl create -n <nsName>  secret tls <secret-tls> --cert=path/to/cert --key=path/to/key
 ```
   
