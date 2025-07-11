@@ -504,3 +504,8 @@ kubectl create -f <fName> -n <nsName>
 ```sh
 kubectl create -f <fName> -n <nsName>
 ```
+
+- Add webhook-config files and checkout what it does when applied
+```sh
+kubectl create -f <fName> -n <nsName>
+```
