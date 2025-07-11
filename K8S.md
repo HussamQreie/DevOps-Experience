@@ -418,6 +418,6 @@ kubectl get pods -o custom-columns="NAME:.metadata.name,PRIORITY:.spec.priorityC
 ### Admission Controller
 - To check default enabled admission controllers you have to get into container and checkout
 -  `--` after this is considered as a shell commands after getting container access
+-  this command shows you enabled and disabled admission plugins by default
 ```sh
-kubectl exec -it <api-server-pod> -n <nsName> -- kube-apiserver -h | grep 'enable-admission-plugins'
-```
+ kubectl exec -it -n kube-system kube-apiserver-controlplane -- kube-apiserver -h | grep admission-plugins```
