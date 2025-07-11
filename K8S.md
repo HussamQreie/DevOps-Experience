@@ -487,4 +487,9 @@ W2/oFMMCY/P8NyDd8sZenpqvJ0MyftD5ULhRgChZ4qahBw1kddtozWwibBIxFN4j
 SzLbD3KJht5vNgG/8hLE8xA=
 -----END PRIVATE KEY-----
 ```
+
+- secret tls creation command
+```sh
+kubectl -n <nsName> create secret tls <secret-tls> --cert=path/to/cert --key=path/to/key
+```
   
