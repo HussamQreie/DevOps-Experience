@@ -517,3 +517,13 @@ kubectl get pods pod-with-defaults -o yaml
 - if no certin config specified in a pod definition file and mutation webhook has this conf -> the config will be added to that pod -> (default)
 - if certin config specified in a pod definition file (like smth :true) and mutation webhook has converse config (like smth: false) -> no affect from mutation webhook because it has already specified -> (override)
 - if the pod definition file has conflict in code, mutation webhook will reject the request from pod. (file confict)
+
+
+---
+
+### exec a command to read a log file in a container in a pod or access the terminal
+```sh
+kubectl -n elastic-stack exec -it app -- bash
+kubectl -n elastic-stack exec -it app -- sh
+kubectl -n elastic-stack exec -it app -- cat /log/app.log
+```
