@@ -1,5 +1,5 @@
 # Terraform (IaC)
-## This repository contains Terraform examples and configurations for building infrastructure on AWS.
+## This repository contains Terraform examples and configurations for building infrastructure a code on AWS.
 ---
 ### Terraform Installation - Get code from Terraform docs
 * Note: My Host Machine is Linux Mint OS.
