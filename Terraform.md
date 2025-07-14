@@ -1,5 +1,5 @@
 # Terraform (IaC)
-## This repository contains Terraform examples and configurations for building infrastructure a code on AWS.
+## build infrastructure a code on AWS.
 ---
 ### Terraform Installation - Get code from Terraform docs
 * Note: My Host Machine is Linux Mint OS.
@@ -16,7 +16,7 @@ sudo apt update && sudo apt install terraform
 ---
 
 ### AWS Setup
-- Go to: ```portal.aws.amazon.com``` and signup/login an root account
+- Go to: ```portal.aws.amazon.com``` and signup/login as a root account
 
 ![001](https://github.com/user-attachments/assets/5f45c3c6-2e5f-4950-9f72-d5b542ad0054)
 
