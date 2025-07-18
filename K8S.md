@@ -527,3 +527,38 @@ kubectl -n elastic-stack exec -it app -- bash
 kubectl -n elastic-stack exec -it app -- sh
 kubectl -n elastic-stack exec -it app -- cat /log/app.log
 ```
+
+ ### egress (dns dealed by kube-dns and it is because i mention pod names instead of their IPs)
+ ```sh
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: internal-policy
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      name: internal
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          name: mysql
+    ports:
+    - protocol: TCP
+      port: 3306
+  - to:
+    - podSelector:
+        matchLabels:
+          name: payroll
+    ports:
+    - protocol: TCP
+      port: 8080
+  - ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
+```
