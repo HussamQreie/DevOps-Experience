@@ -562,3 +562,7 @@ spec:
     - protocol: UDP
       port: 53
 ```
+# know path by json format then use custom-columns
+```sh
+kubectl get deployments.apps -n admin2406 -o custom-columns=DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers[*].image,READY_REPLICAS:,NAMESPACE:
+```
